@@ -3,7 +3,7 @@ async function sendText() {
   const resultBox = document.getElementById("result");
 
   // Reset classes
-  resultBox.className = "hidden";
+  resultBox.className = "result hidden";
 
   try {
     const res = await fetch("/predict", {
@@ -16,21 +16,14 @@ async function sendText() {
 
     if (data.sentiment) {
       resultBox.textContent = "Sentiment: " + data.sentiment;
-
-      if (data.sentiment === "positive") {
-        resultBox.className = "positive";
-      } else if (data.sentiment === "negative") {
-        resultBox.className = "negative";
-      } else {
-        resultBox.className = "neutral";
-      }
+      resultBox.className = "result " + data.sentiment;
     } else {
       resultBox.textContent = "Error: No sentiment returned.";
-      resultBox.className = "";
+      resultBox.className = "result";
     }
   } catch (err) {
     resultBox.textContent = "Error connecting to server.";
-    resultBox.className = "";
+    resultBox.className = "result";
     console.error(err);
   }
 }

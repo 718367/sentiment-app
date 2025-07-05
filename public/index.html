@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sentiment Analysis App</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Sentiment Analysis Web App</h1>
-    <p>Detect sentiment in real-time using Machine Learning</p>
+  <header class="header">
+    <div class="container">
+      <h1>Sentiment Analysis Web App</h1>
+      <p>Real-time sentiment detection using machine learning</p>
+    </div>
   </header>
 
-  <main>
-    <h2>Try It Now</h2>
-    <input type="text" id="inputText" placeholder="Type something..." />
-    <button onclick="sendText()">Predict Sentiment</button>
+  <main class="main">
+    <div class="container">
+      <section class="input-section">
+        <h2>🔍 Try It Now</h2>
+        <div class="input-group">
+          <input type="text" id="inputText" placeholder="Type a sentence..." />
+          <button onclick="sendText()">Analyze</button>
+        </div>
+        <p id="result" class="result hidden"></p>
+      </section>
 
-    <p id="result" class="hidden"></p>
-
-    <div class="summary">
-      <h3>About This Project</h3>
-      <p>
-        Built by <strong>Yousef Mohamed Farouk</strong> – a backend developer passionate about Machine Learning and real-world applications.
-        This app uses a pre-trained ML model (Logistic Regression) to analyze the sentiment of text using Python + Node.js.
-      </p>
+      <section class="summary">
+        <h3>📌 About This Project</h3>
+        <p>
+          Developed by <strong>Yousef Mohamed Farouk</strong> – a backend developer with a passion for machine learning and real-world applications.
+          This app leverages a trained ML model (Logistic Regression) to detect sentiment in user input using Python and Node.js.
+        </p>
+      </section>
     </div>
   </main>
 
-  <footer>
-    &copy; 2025 Yousef Mohamed Farouk – All rights reserved.
+  <footer class="footer">
+    <div class="container">
+      &copy; 2025 Yousef Mohamed Farouk – All rights reserved.
+    </div>
   </footer>
 
   <script src="script.js"></script>
